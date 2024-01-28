@@ -30,4 +30,5 @@ public class HomeSteps {
     public void userClickOnWithoutsubscriptionLabel() {
         homePage.clickOnSpan();
     }
+
 }
