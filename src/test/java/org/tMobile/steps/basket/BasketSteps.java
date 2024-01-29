@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import org.tMobile.pages.HomePage;
 import org.tMobile.pages.basket.BasketPage;
 import org.tMobile.utils.DriverFactory;
-import org.tMobile.utils.LoggerToFile;
+import org.tMobile.utils.LoggerUtil;
 
 public class BasketSteps {
 
@@ -14,8 +14,8 @@ public class BasketSteps {
     @And("User will be redirect to home page")
     public void userWillBeRedirectToHomePage() {
         basketPage.clickOnLogo();
-        LoggerToFile.logger.info("The user has been redirected to the home page");
+        LoggerUtil.logger.info("The user has been redirected to the home page");
         homePage.checkOnBasketMenu();
-        LoggerToFile.logger.info("Menu basked was checked");
+        LoggerUtil.logger.info("Menu basked was checked");
     }
 }

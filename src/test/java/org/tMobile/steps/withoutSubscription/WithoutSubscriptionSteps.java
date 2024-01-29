@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.tMobile.pages.withoutSubscription.WithoutSubscriptionPage;
 import org.tMobile.utils.DriverFactory;
-import org.tMobile.utils.LoggerToFile;
+import org.tMobile.utils.LoggerUtil;
 
 
 public class WithoutSubscriptionSteps {
@@ -15,17 +15,17 @@ public class WithoutSubscriptionSteps {
     @Given("User add product to basket")
     public void userAddProductToBasket() {
         withoutSubscriptionPage.setAddToBasket();
-        LoggerToFile.logger.info("The user added the product to the basket");
+        LoggerUtil.logger.info("The user added the product to the basket");
         withoutSubscriptionPage.compareObjectVariable();
-        LoggerToFile.logger.info("The user compared prices");
+        LoggerUtil.logger.info("The user compared prices");
 
     }
 
     @Then("User choose first item from smartwatches list")
     public void userChooseFirstItemFromSmartwatchesList() {
         withoutSubscriptionPage.clickOnFirstElement();
-        LoggerToFile.logger.info("The user clicked on the first item in the list");
+        LoggerUtil.logger.info("The user clicked on the first item in the list");
         withoutSubscriptionPage.getCompareObjectVariable();
-        LoggerToFile.logger.info("The user compared product prices");
+        LoggerUtil.logger.info("The user compared product prices");
     }
 }

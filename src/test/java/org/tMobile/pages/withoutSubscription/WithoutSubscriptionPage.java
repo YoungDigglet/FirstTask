@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.tMobile.utils.ClickIndexListUtil;
-import org.tMobile.utils.GetPrice;
+import org.tMobile.utils.GetPriceUtil;
 
 import java.util.List;
 
@@ -47,13 +47,13 @@ public class WithoutSubscriptionPage {
     }
 
     public void getCompareObjectVariable() {
-        GetPrice.setPriceBetweenView("ActualPrice", actualStartPriceLabel.getText());
-        GetPrice.setPriceBetweenView("ActualMonthPrice", actualRightPriceLabel.getText());
+        GetPriceUtil.setPriceBetweenView("ActualPrice", actualStartPriceLabel.getText());
+        GetPriceUtil.setPriceBetweenView("ActualMonthPrice", actualRightPriceLabel.getText());
     }
 
     public void compareObjectVariable() {
-        Assert.assertEquals(totalStartPriceLabel.getText(), GetPrice.getPriceBetweenView("ActualPrice"));
-        Assert.assertEquals(totalMonthPriceLabel.getText(), GetPrice.getPriceBetweenView("ActualMonthPrice"));
+        Assert.assertEquals(totalStartPriceLabel.getText(), GetPriceUtil.getPriceBetweenView("ActualPrice"));
+        Assert.assertEquals(totalMonthPriceLabel.getText(), GetPriceUtil.getPriceBetweenView("ActualMonthPrice"));
     }
 
 }

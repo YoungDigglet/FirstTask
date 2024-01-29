@@ -10,8 +10,6 @@ import org.tMobile.utils.DriverFactory;
 public class BasketPage {
 
     private final WebDriver driver;
-
-    WithoutSubscriptionPage withoutSubscriptionPage = new WithoutSubscriptionPage(DriverFactory.getDriver());
     @FindBy(xpath = "//a[@class = 'logoWrap']")
     private WebElement imgLogo;
 
