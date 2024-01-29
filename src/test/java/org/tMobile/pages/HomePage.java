@@ -1,12 +1,13 @@
 package org.tMobile.pages;
 
-import lombok.extern.slf4j.Slf4j;
+
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-@Slf4j
+
 public class HomePage {
 
     private final WebDriver driver;
@@ -21,6 +22,9 @@ public class HomePage {
     @FindBy(xpath = "//p[contains(text(), 'Smartwatche i opaski')]/..//a[contains(.,'Bez abonamentu')]")
     private WebElement withoutSubscriptionButton;
 
+    @FindBy(xpath = "//a[contains(@data-ma, 'menu-basket')]/div[contains(@class, 'rounded-full')]")
+    private WebElement menuBaskedButton;
+
     public HomePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
@@ -28,16 +32,19 @@ public class HomePage {
 
     public void clickAgreeButton() {
         agreeCookiesButton.click();
-        log.info("Cookies was agreed");
+
     }
 
     public void clickDeviceButton() {
         deviceButton.click();
-        log.info("Device button was clicked");
     }
 
     public void clickOnSpan() {
         withoutSubscriptionButton.click();
-        log.info("Without subscription was clicked");
     }
+
+    public void checkOnBasketMenu() {
+        Assert.assertTrue(menuBaskedButton.isEnabled());
+    }
+
 }

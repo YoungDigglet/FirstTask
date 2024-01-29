@@ -7,16 +7,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class DriverFactory {
     private static WebDriver driver;
 
-    public static WebDriver getDriver(){
-       if(driver == null) {
-           WebDriverManager.chromedriver().setup();
-           driver = new ChromeDriver();
-       }
-       return driver;
-       }
+    public static WebDriver getDriver() {
+        if (driver == null) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }
+        return driver;
+    }
 
-       public static void quitDriver(){
+    public static void quitDriver() {
         driver.quit();
         driver = null;
-       }
+    }
 }
